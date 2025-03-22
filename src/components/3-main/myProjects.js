@@ -4,7 +4,7 @@ export const myProjects = [
     description:
       "A responsive website template built with pure HTML and CSS that offers clean design and modern aesthetics for digital presentation.",
     category: ["css"],
-    imgPath: "./images/1.jpg",
+    imgPath: "/public/kasper.png",
     githubUrl: "https://github.com/Omer-Mevlutoglu/Template-2.git",
   },
   {
@@ -12,7 +12,7 @@ export const myProjects = [
     description:
       "A modern ecommerce experience built for the future of online shopping that delivers seamless transactions and innovative user engagement consistently.",
     category: ["react", "css"],
-    imgPath: "./images/2.jpg",
+    imgPath: "/public/next.png",
     githubUrl: "https://github.com/Omer-Mevlutoglu/Basic-ecommerce-Next.js.git",
     liveUrl: "https://basic-ecommerce-next-js.vercel.app/",
   },
@@ -21,7 +21,7 @@ export const myProjects = [
     description:
       "A full-stack e-commerce platform built with the MERN stack (MongoDB, Express, React, Node.js) featuring user authentication, product management, and checkout.",
     category: ["mern", "react"],
-    imgPath: "./images/3.jpg",
+    imgPath: "/public/mern.png",
     githubUrl: "https://github.com/Omer-Mevlutoglu/E-commerce_MERN.git",
     liveUrl: "https://www.youtube.com/watch?v=tSwDvwmv5j4",
   },
@@ -30,7 +30,7 @@ export const myProjects = [
     description:
       "A simple interactive quiz app built with Flutter that tests knowledge about Egypt using multiple-choice questions and instant feedback efficiently.",
     category: ["flutter"],
-    imgPath: "./images/4.jpg",
+    imgPath: "/public/flutter.jpg",
     githubUrl: "https://github.com/yourusername/kasper-template",
   },
   {
@@ -38,7 +38,7 @@ export const myProjects = [
     description:
       "A Flutter-based to-do app to manage tasks by allowing adding, editing, deleting, and tracking completion while offering an intuitive interface.",
     category: ["flutter"],
-    imgPath: "./images/5.jpg",
+    imgPath: "/public/flutter.jpg",
     githubUrl: "https://github.com/Omer-Mevlutoglu/to-do-app-flutter.git",
   },
   {
@@ -46,7 +46,7 @@ export const myProjects = [
     description:
       "A Java-based personal finance manager that tracks income, expenses, and transaction details while generating financial reports for effective money management.",
     category: ["java"],
-    imgPath: "./images/6.jpg",
+    imgPath: "/public/java.png",
     githubUrl: "https://github.com/Omer-Mevlutoglu/income-tracking-system.git",
   },
   {
@@ -54,7 +54,7 @@ export const myProjects = [
     description:
       "A fully responsive HTML and CSS template that delivers a modern, clean design with optimized performance and user-friendly navigation effortlessly.",
     category: ["css"],
-    imgPath: "./images/7.jpg",
+    imgPath: "/public/Temp-3.png",
     githubUrl: "https://github.com/yourusername/kasper-template",
   },
   {
@@ -62,7 +62,7 @@ export const myProjects = [
     description:
       "A modern digital marketplace for games, gift cards, and subscriptions that offers a seamless, innovative, and reliable purchasing experience today.",
     category: ["js"],
-    imgPath: "./images/8.jpg",
+    imgPath: "/public/eyad.png",
     githubUrl: "https://github.com/yourusername/kasper-template",
     liveUrl: "https://omer-mevlutoglu.github.io/Template-3-Updated-js/",
   },
@@ -71,7 +71,7 @@ export const myProjects = [
     description:
       "A Java-based employee management system utilizing object-oriented programming and advanced algorithms to efficiently handle employee data and streamline operations effectively.",
     category: ["java"],
-    imgPath: "./images/9.jpg",
+    imgPath: "/public/java.png",
     githubUrl:
       "https://github.com/Omer-Mevlutoglu/basic-employee-management-system.git",
   },

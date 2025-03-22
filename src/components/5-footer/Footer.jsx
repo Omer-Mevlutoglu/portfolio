@@ -1,4 +1,3 @@
-import React from "react";
 import "./footer.css";
 const Footer = () => {
   return (
@@ -11,14 +10,11 @@ const Footer = () => {
           <a href="">Projects</a>
         </li>
         <li>
-          <a href="">Speaking</a>
-        </li>
-        <li>
-          <a href="">Uses</a>
+          <a href="">Contact</a>
         </li>
       </ul>
 
-      <p>© 2023 Spencer Sharp. All rights reserved.</p>
+      <p>© 2025 Omer. All rights reserved.</p>
     </footer>
   );
 };

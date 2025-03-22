@@ -5,22 +5,35 @@ import doneAnimation from "../../animation/done.json";
 import contactAnimation from "../../animation/contact.json";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("xrgvvdlo");
+  const [state, handleSubmit] = useForm("mzzeeong");
+  const whatsappNumber = "+905538375529";
 
   return (
-    <section className="contact-us">
-      <h1 className="title">
-        <span className="icon-envelope"> </span>
-        Contact us
-      </h1>
+    <section className="contact-us" id="contact">
+      <div className="flex contact-header">
+        <h1 className="title">
+          <span className="icon-envelope"></span>
+          Get in Touch
+        </h1>
+        <a
+          href={`https://wa.me/${whatsappNumber}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-icon"
+          aria-label="Contact via WhatsApp"
+        >
+          <i className="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+
       <p className="sub-title">
-        Contact us for more information and Get notified when I publish
-        something new.
+        Reach out for inquiries or get notified about my latest projects and
+        updates. Im here to help bring your ideas to life!
       </p>
 
-      <div style={{ justifyContent: "space-between" }} className="flex">
-        <form onSubmit={handleSubmit} className="">
-          <div className="flex">
+      <div className="flex contact-container">
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="input-group">
             <label htmlFor="email">Email Address:</label>
             <input
               autoComplete="off"
@@ -28,6 +41,7 @@ const Contact = () => {
               type="email"
               name="email"
               id="email"
+              placeholder="your.email@example.com"
             />
             <ValidationError
               prefix="Email"
@@ -36,9 +50,14 @@ const Contact = () => {
             />
           </div>
 
-          <div className="flex" style={{ marginTop: "24px" }}>
-            <label htmlFor="message">Your message:</label>
-            <textarea required name="message" id="message"></textarea>
+          <div className="input-group">
+            <label htmlFor="message">Your Message:</label>
+            <textarea
+              required
+              name="message"
+              id="message"
+              placeholder="Let's create something amazing together..."
+            ></textarea>
             <ValidationError
               prefix="Message"
               field="message"
@@ -46,25 +65,34 @@ const Contact = () => {
             />
           </div>
 
-          <button type="submit" disabled={state.submitting} className="submit">
-            {state.submitting ? "Submitting ..." : "Submit"}
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className="submit flex"
+          >
+            {state.submitting ? (
+              <span className="loading"></span>
+            ) : (
+              <>
+                Send Message
+                <span className="icon-paper-plane"></span>
+              </>
+            )}
           </button>
 
           {state.succeeded && (
-            <p
-              className="flex"
-              style={{ fontSize: "18px", marginTop: "1.7rem" }}
-            >
+            <div className="success-message flex">
               <Lottie
                 loop={false}
                 style={{ height: 37 }}
                 animationData={doneAnimation}
               />
-              Your message has been sent successfully 👌
-            </p>
+              <span>Message sent successfully! 🚀</span>
+            </div>
           )}
         </form>
-        <div className=" animation">
+
+        <div className="animation contact-illustration">
           <Lottie
             className="contact-animation"
             style={{ height: 355 }}
