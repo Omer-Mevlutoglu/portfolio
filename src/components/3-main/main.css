@@ -51,12 +51,10 @@ main section.left-section.flex button.active {
 ================================== */
 
 main section.right-section.flex {
-  flex-grow: 1;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  column-gap: 16px;
-  row-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
 }
 
 .card {
@@ -68,6 +66,11 @@ main section.right-section.flex {
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.05)
   );
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .light .card,
@@ -85,10 +88,17 @@ main section.right-section.flex {
 
 .card img {
   border-radius: 5px;
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .card .box {
   padding: 1rem 0.4rem;
+  height: calc(100% - 266px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .card .box .title {
@@ -101,10 +111,21 @@ main section.right-section.flex {
   font-size: 0.8rem;
   margin-top: 0.7rem;
   margin-bottom: 1.1rem;
+  overflow-y: auto; /* Add scroll for long text */
+  flex-grow: 1; /* Take available space */
+  min-height: 80px; /* Minimum height for short descriptions */
+  flex: 1;
+  overflow-y: auto;
+  max-height: 150px;
+  padding-right: 0.5rem;
 }
 
 .card .box .icons {
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: auto; /* Push icons to bottom */
+  padding-top: 1rem;
 }
 
 .card .icon-github,
@@ -124,6 +145,91 @@ main section.right-section.flex {
   font-size: 0.9rem;
   color: var(--blue);
   margin-right: 12px;
+}
+
+.card .box .sub-title::-webkit-scrollbar {
+  width: 4px;
+}
+
+.card .box .sub-title::-webkit-scrollbar-thumb {
+  background: var(--subtitle);
+  border-radius: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  main section.right-section.flex {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card .box .sub-title {
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  main section.right-section.flex {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 180px;
+  }
+}
+
+/* Icon links styling */
+.card .icon-github,
+.card .icon-link {
+  font-size: 1.2rem;
+  color: var(--subtitle);
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.card .icon-github:hover,
+.card .icon-link:hover {
+  transform: translateY(-2px);
+  color: var(--icon-hover);
+}
+
+.card .icon-link {
+  position: relative;
+}
+
+.card .icon-link::after {
+  content: "Live Demo";
+  position: absolute;
+  bottom: -15px;
+  left: 210%;
+  transform: translateX(-50%);
+  background: var(--bgHeader);
+  color: var(--title);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.card .icon-link:hover::after {
+  opacity: 1;
+}
+
+/* More link styling */
+.card a.link {
+  transition: color 0.3s ease;
+}
+
+.card a.link:hover {
+  color: var(--icon-hover);
 }
 
 /* =====================================
@@ -149,4 +255,26 @@ main section.right-section.flex {
     padding: 0.8rem 0;
     font-size: 0.9rem;
   }
+}
+
+/* Existing styles ... */
+
+.read-more {
+  background: none;
+  border: none;
+  color: var(--blue);
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Optional: ensure card box stays consistent when collapsed */
+.card .box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

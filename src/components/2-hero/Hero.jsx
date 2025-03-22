@@ -6,7 +6,20 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   const lottieRef = useRef();
-
+  const socialLinks = [
+    {
+      name: "github",
+      url: "https://github.com/Omer-Mevlutoglu",
+      class: "icon-github",
+      ariaLabel: "GitHub profile",
+    },
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/%C3%B6mer-mevl%C3%BCto%C4%9Flu-ab7105257/",
+      class: "icon-linkedin",
+      ariaLabel: "LinkedIn profile",
+    },
+  ];
   return (
     <section className="hero flex">
       <div className="left-section  ">
@@ -15,7 +28,7 @@ const Hero = () => {
             initial={{ transform: "scale(0)" }}
             animate={{ transform: "scale(1.1)" }}
             transition={{ damping: 6, type: "spring", stiffness: 100 }}
-            src="./me.jpg"
+            src="./me-modified.png"
             className="avatar"
             alt=""
           />
@@ -28,31 +41,43 @@ const Hero = () => {
           transition={{ duration: 2 }}
           className="title"
         >
-          Software designer, founder, and amateur astronaut.
+          <span className="typing-text">Software Engineer, Web Developer.</span>
         </motion.h1>
 
         <p className="sub-title">
-          I’m Omer Mevlutoglu, a software designer and entrepreneur based in Istanbul
-          City. I’m the founder and CEO of Planetaria, where we develop
-          technologies that empower regular people to explore space on their own
-          terms.
+          Im a developer passionate about building modern web and mobile
+          solutions for small and medium-sized businesses. Whether you need a
+          dynamic website to showcase your services, win new work, or launch an
+          online store, I can help. I specialize in technologies like React,
+          Next.js, and the MERN stack for full-stack web development, along with
+          cross-platform mobile app development using Flutter & Flutter Flow. I
+          manage projects from start to finish, ensuring clear, regular
+          communication every step of the way. Lets work together to bring your
+          vision to life!
         </p>
 
         <div className="all-icons flex">
-          <div className="icon icon-twitter"></div>
-          <div className="icon icon-instagram"></div>
-          <div className="icon icon-github"></div>
-          <div className="icon icon-linkedin"></div>
+          {socialLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.url}
+              className={`icon ${link.class}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.ariaLabel}
+            >
+              {/* Optional: Add screen reader-only text */}
+              <span className="sr-only">{link.ariaLabel}</span>
+            </a>
+          ))}
         </div>
       </div>
-
       <div className="right-section animation ">
         <Lottie
           lottieRef={lottieRef}
           className=""
           onLoadedImages={() => {
             // @ts-ignore
-            // https://lottiereact.com/
             lottieRef.current.setSpeed(0.5);
           }}
           animationData={devAnimation}

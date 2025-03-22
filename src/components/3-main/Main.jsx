@@ -57,57 +57,77 @@ const Main = () => {
           }}
           className={currentActive === "react" ? "active" : null}
         >
-          React & MUI
+          React & Next
         </button>
         <button
           onClick={() => {
-            handleClick("node");
+            handleClick("mern");
           }}
-          className={currentActive === "node" ? "active" : null}
+          className={currentActive === "mern" ? "active" : null}
         >
-          Node & Express
+          Mern Stack
+        </button>
+        <button
+          onClick={() => {
+            handleClick("java");
+          }}
+          className={currentActive === "java" ? "active" : null}
+        >
+          Java
+        </button>
+
+        <button
+          onClick={() => {
+            handleClick("flutter");
+          }}
+          className={currentActive === "flutter" ? "active" : null}
+        >
+          Flutter
         </button>
       </section>
 
-      <section className=" flex right-section">
+      <section className="flex right-section">
         <AnimatePresence>
-          {arr.map((item) => {
-            return (
-              <motion.article
-                layout
-                initial={{ transform: "scale(0.4)" }}
-                animate={{ transform: "scale(1)" }}
-                transition={{ type: "spring", damping: 8, stiffness: 50 }}
-                key={item.imgPath}
-                className="  card"
-              >
-                <img width={266} src={item.imgPath} alt="" />
+          {arr.map((item) => (
+            <motion.article
+              layout
+              initial={{ transform: "scale(0.4)" }}
+              animate={{ transform: "scale(1)" }}
+              transition={{ type: "spring", damping: 8, stiffness: 50 }}
+              key={item.imgPath}
+              className="card"
+            >
+              <img width={266} src={item.imgPath} alt={item.projectTitle} />
 
-                <div style={{ width: "266px" }} className="box">
-                  <h1 className="title">{item.projectTitle}</h1>
-                  <p className="sub-title">
-                    Lorem ipsum dolor sit amet consectetur elit adipisicing . Ex
-                    tempore dolor in, accusantium laudantium accusamus.
-                  </p>
+              <div className="box">
+                <h1 className="title">{item.projectTitle}</h1>
+                <p className="sub-title">{item.description}</p>
 
-                  <div className="flex icons">
-                    <div style={{ gap: "11px" }} className="flex">
-                      <div className="icon-link"></div>
-                      <div className="icon-github"></div>
-                    </div>
-
-                    <a className="link flex" href="">
-                      more
-                      <span
-                        style={{ alignSelf: "end" }}
-                        className="icon-arrow-right"
-                      ></span>
-                    </a>
+                <div className="flex icons">
+                  <div style={{ gap: "11px" }} className="flex">
+                    {item.githubUrl && (
+                      <a
+                        href={item.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="icon icon-github"
+                        aria-label="GitHub repository"
+                      />
+                    )}
+                    {item.liveUrl && (
+                      <a
+                        href={item.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="icon icon-link"
+                        aria-label="Live demo"
+                      />
+                    )}
                   </div>
                 </div>
-              </motion.article>
-            );
-          })}
+              </div>
+            </motion.article>
+          ))}
         </AnimatePresence>
       </section>
     </main>
