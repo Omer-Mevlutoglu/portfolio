@@ -6,6 +6,10 @@ section.contact-us {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
+  color: var(--title);
+}
+p.sub-title {
+  color: var(--title);
 }
 
 .whatsapp-icon {
@@ -33,6 +37,7 @@ section.contact-us {
 .contact-container {
   gap: 3rem;
   align-items: flex-start;
+  color: var(--title);
 }
 
 .contact-form {
