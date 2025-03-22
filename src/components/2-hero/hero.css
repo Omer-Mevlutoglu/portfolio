@@ -175,12 +175,13 @@ section.hero .animation {
   }
 
   .typing-text {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     animation: typing 6s steps(20) infinite;
   }
 
   section.hero p.sub-title {
     font-size: 0.8rem;
+    text-align: left;
     line-height: 1.4rem;
     padding: 0;
   }

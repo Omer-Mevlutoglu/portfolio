@@ -164,9 +164,9 @@ html {
   background-color: rgb(25, 118, 210);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .container {
-    width: 98%;
+    width: 100%;
     padding: 0 var(--container-padding);
   }
 
