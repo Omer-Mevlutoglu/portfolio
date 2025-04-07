@@ -84,4 +84,14 @@ export const myProjects = [
     githubUrl:
       "https://github.com/Omer-Mevlutoglu/basic-employee-management-system.git",
   },
+  {
+    id: 10,
+    projectTitle: "FYLO Template",
+    description:
+      "A modern, responsive landing page for Fylo - a file storage and collaboration platform. Built with React, Vite, and Tailwind CSS.",
+    category: ["tailwindCss"],
+    imgPath: "/Fylo.png",
+    githubUrl: "https://github.com/Omer-Mevlutoglu/Fylo-TailwindCss",
+    liveUrl: "https://fylo-tailwind-css.vercel.app/",
+  },
 ];
